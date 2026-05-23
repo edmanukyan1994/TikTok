@@ -1,0 +1,7 @@
+[build]
+  command = "npm install"
+  directory = "."
+
+[run]
+  command = "node"
+  port = 3000
