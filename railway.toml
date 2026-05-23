@@ -1,11 +1,14 @@
-[build]
-  command = "npm install"
-  directory = "."
-  engines = { node = "18.16.0" }  # Укажи нужную версию Node.js
+# railway.toml
 
-[run]
-  command = "node index.js"  # Убедись, что у тебя файл с именем index.js
-  port = 3000
+[build]
+  image = "node:18"
+  commands = [
+    "npm install",
+    "npm run build",
+  ]
+
+[deploy]
+  command = "node server.js"
 
 [env]
   TELEGRAM_BOT_TOKEN = "<YOUR_TELEGRAM_BOT_TOKEN>"
