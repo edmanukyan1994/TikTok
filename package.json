@@ -8,5 +8,8 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    // Если у тебя есть какие-то зависимости, добавь их здесь
+  }
 }
