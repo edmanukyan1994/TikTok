@@ -5,3 +5,7 @@
 [run]
   command = "node"
   port = 3000
+
+[env]
+  TELEGRAM_BOT_TOKEN = "<YOUR_TELEGRAM_BOT_TOKEN>"
+  CHAT_ID = "<YOUR_CHAT_ID>"
