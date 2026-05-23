@@ -1,9 +1,10 @@
 [build]
   command = "npm install"
   directory = "."
+  engines = { node = "18.16.0" }  # Укажи нужную версию Node.js
 
 [run]
-  command = "node"
+  command = "node index.js"  # Убедись, что у тебя файл с именем index.js
   port = 3000
 
 [env]
